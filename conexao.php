@@ -1,10 +1,19 @@
 <?php
-define('HOST', 'localhost'); // O VALOR DE HOST É O IP DO BANCO DE DADOS MYSQL
-define('USUARIO', 'root');
-define('SENHA', '');
-define('DB', 'login');
 
-$conexao = mysqli_connect(HOST, USUARIO, SENHA, DB) or die('Não foi possível conectar');
+$servername = "5050";
+$username = "root";
+$password = "yes";
+$dbname = "login";
+
+// Criando conexão
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Checando conexão
+if ($conn->connect_error) {
+  die("Conexão falhou: " . $conn->connect_error);
+}
+echo "Conexão bem sucedida";
+$conn->close();
 ?>
 
 
